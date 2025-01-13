@@ -23,7 +23,10 @@ public class Kiosk {
             //상위 메뉴 선택
             categoryNum = inputNum(menus.size());
             // 0 입력 시 종료
-            if (categoryNum == 0) break;
+            if (categoryNum == 0) {
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
 
 
             // 하위 메뉴
