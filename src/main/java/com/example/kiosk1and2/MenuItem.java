@@ -1,4 +1,4 @@
-package com.example.kiosk1;
+package com.example.kiosk1and2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -10,30 +10,30 @@ public class MenuItem {
 
     private double itemPrice;
 
-    private List<String> itemInnerList;
+    private List<String> itemDescribeList;
 
     public MenuItem(String itemName, double itemPrice, String[] itemInner) {
-        this.itemInnerList = new ArrayList<>();
+        this.itemDescribeList = new ArrayList<>();
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.itemInnerList.addAll(Arrays.asList(itemInner));
+        this.itemDescribeList.addAll(Arrays.asList(itemInner));
     }
 
     // list CRUD
-    public void addItemInner(String itemInner) {
-        this.itemInnerList.add(itemInner);
+    public void addItemDescribe(String itemInner) {
+        this.itemDescribeList.add(itemInner);
     }
 
-    public String getItemInner(int i) {
-        return this.itemInnerList.get(i);
+    public String getItemDescribe(int i) {
+        return this.itemDescribeList.get(i);
     }
 
-    public void updateItemInner(int i, String itemInner) {
-        this.itemInnerList.set(i, itemInner);
+    public void updateItemDescribe(int i, String itemInner) {
+        this.itemDescribeList.set(i, itemInner);
     }
 
-    public void deleteItemInner(String itemInner) {
-        this.itemInnerList.remove(itemInner);
+    public void deleteItemDescribe(String itemInner) {
+        this.itemDescribeList.remove(itemInner);
     }
 
 
@@ -46,8 +46,8 @@ public class MenuItem {
         return this.itemPrice;
     }
 
-    public List<String> getItemInnerList() {
-        return this.itemInnerList;
+    public List<String> getItemDescribeList() {
+        return this.itemDescribeList;
     }
 
     public void setItemName(String itemName) {
@@ -58,8 +58,8 @@ public class MenuItem {
         this.itemPrice = itemPrice;
     }
 
-    public void setItemInnerList(List<String> itemInnerList) {
-        this.itemInnerList = itemInnerList;
+    public void setItemDescribeList(List<String> itemDescribeList) {
+        this.itemDescribeList = itemDescribeList;
     }
 
     // Override
@@ -74,7 +74,7 @@ public class MenuItem {
 
         sb.append(" | ");
         sb.append(" W ").append(this.itemPrice).append("\t").append(" | ");
-        this.itemInnerList.forEach(item -> {
+        this.itemDescribeList.forEach(item -> {
             sb.append(item).append(", ");
         });
         sb.delete(sb.length()-2 , sb.length()-1); // 마지막 , 삭제용

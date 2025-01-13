@@ -1,4 +1,4 @@
-package com.example.kiosk1;
+package com.example.kiosk1and2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,25 +24,29 @@ public class Main {
         System.out.println("0. 종료" + "\t\t\t | " + "종료");
 
         // 사용자 입력
-        System.out.println("메뉴를 선택해주세요.");
-        try {
-            selectNum = sc.nextInt();
-        } catch (NumberFormatException e) {
-            System.out.println(e.getMessage());
-        }
+        while(true) {
+            System.out.println("메뉴를 선택해주세요.");
+            try {
+                selectNum = sc.nextInt();
+            } catch (NumberFormatException e) {
+                System.out.println(e.getMessage());
+            }
 
-        // 연산 & 출력
-        switch (selectNum) {
-            case 0 -> {
-                System.out.println("프로그램을 종료합니다.");
+            // 연산 & 출력
+            switch (selectNum) {
+                case 0 -> {
+                    System.out.println("프로그램을 종료합니다.");
+                }
+                case 1, 2, 3, 4 -> {
+                    // selectNum -1 위치 조정용
+                    System.out.println("선택하신 메뉴 : " + menuList.get(selectNum - 1).toString());
+                }
+                default -> {
+                    System.out.println("아직 없는 메뉴입니다.");
+                }
             }
-            case 1,2,3,4 -> {
-                // selectNum -1 위치 조정용
-                System.out.println("선택하신 햄버거" + menuList.get(selectNum-1).toString());
-            }
-            default -> {
-                System.out.println("아직 없는 메뉴입니다.");
-            }
+
+            if( selectNum == 0 ) break;
         }
     }
 }
