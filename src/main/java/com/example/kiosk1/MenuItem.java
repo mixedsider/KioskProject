@@ -77,7 +77,7 @@ public class MenuItem {
         this.itemInnerList.forEach(item -> {
             sb.append(item).append(", ");
         });
-        sb.delete(sb.length()-1 , sb.length());
+        sb.delete(sb.length()-2 , sb.length()-1); // 마지막 , 삭제용
         return sb.toString();
     }
 }
