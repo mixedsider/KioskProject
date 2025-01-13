@@ -12,28 +12,28 @@ public class MenuItem {
 
     private List<String> itemDescribeList;
 
-    public MenuItem(String itemName, double itemPrice, String[] itemInner) {
+    public MenuItem(String itemName, double itemPrice, String[] itemDescribe) {
         this.itemDescribeList = new ArrayList<>();
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.itemDescribeList.addAll(Arrays.asList(itemInner));
+        this.itemDescribeList.addAll(Arrays.asList(itemDescribe));
     }
 
     // list CRUD
-    public void addItemDescribe(String itemInner) {
-        this.itemDescribeList.add(itemInner);
+    public void addItemDescribe(String itemDescribe) {
+        this.itemDescribeList.add(itemDescribe);
     }
 
     public String getItemDescribe(int i) {
         return this.itemDescribeList.get(i);
     }
 
-    public void updateItemDescribe(int i, String itemInner) {
-        this.itemDescribeList.set(i, itemInner);
+    public void updateItemDescribe(int i, String itemDescribe) {
+        this.itemDescribeList.set(i, itemDescribe);
     }
 
-    public void deleteItemDescribe(String itemInner) {
-        this.itemDescribeList.remove(itemInner);
+    public void deleteItemDescribe(String itemDescribe) {
+        this.itemDescribeList.remove(itemDescribe);
     }
 
 

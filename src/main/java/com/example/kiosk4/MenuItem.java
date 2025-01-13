@@ -1,4 +1,4 @@
-package com.example.kiosk1and2;
+package com.example.kiosk4;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,11 +12,11 @@ public class MenuItem {
 
     private List<String> itemDescribeList;
 
-    public MenuItem(String itemName, double itemPrice, String[] itemDescribeList) {
+    public MenuItem(String itemName, double itemPrice, String[] itemDescribe) {
         this.itemDescribeList = new ArrayList<>();
         this.itemName = itemName;
         this.itemPrice = itemPrice;
-        this.itemDescribeList.addAll(Arrays.asList(itemDescribeList));
+        this.itemDescribeList.addAll(Arrays.asList(itemDescribe));
     }
 
     // list CRUD
