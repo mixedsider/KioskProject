@@ -44,7 +44,7 @@ public class Menu {
     }
 
     public void showMenuItems() {
-        System.out.println("[ " + this.menuCategory + " ]");
+        System.out.println("[ " + this.menuCategory + " MENU ]");
         for( int i = 0; i < this.menuItems.size(); i++ ) {
             MenuItem item = this.menuItems.get(i);
             System.out.println(i+1 + ". " + item.toString());

@@ -6,7 +6,6 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
 
-        // 싱글톤
         List<Menu> menus = new ArrayList<>();
 
         // 메뉴 넣기
