@@ -14,32 +14,33 @@ public class Kiosk {
     }
 
     public void start() {
-        int categoryNum = -1;
+        final int END_NUMBER = -1;
 
         //상위 메뉴
+        int categoryNum = END_NUMBER;
         while(true) {
             // 상위 메뉴 출력
             showMenuCategories();
             //상위 메뉴 선택
             categoryNum = inputNum(menus.size());
             // 0 입력 시 종료
-            if (categoryNum == 0) {
+            if (categoryNum == END_NUMBER ) {
                 System.out.println("프로그램을 종료합니다.");
                 break;
             }
 
 
             // 하위 메뉴
-            int menuItemNum = -1;
+            int menuItemNum = END_NUMBER;
             // 카테고리 선택 ( 입력 숫자 -1 == 배열 맞추기 )
-            List<MenuItem> menuItems = menus.get(categoryNum - 1).getMenuItems();
+            List<MenuItem> menuItems = menus.get(categoryNum).getMenuItems();
             // 하위 메뉴 출력
-            menus.get(categoryNum - 1).showMenuItems();
+            menus.get(categoryNum).showMenuItems();
             // 하위 메뉴 선택
             menuItemNum = inputNum(menuItems.size());
             // 0 입력시 뒤로 가기
-            if( menuItemNum == 0 ) System.out.println("상위 메뉴로 돌아갑니다.");
-            else System.out.println("선택하신 메뉴 : " + menuItems.get(menuItemNum - 1).toString());
+            if( menuItemNum == END_NUMBER ) System.out.println("상위 메뉴로 돌아갑니다.");
+            else System.out.println("선택하신 메뉴 : " + menuItems.get(menuItemNum).toString());
         }
     }
 
@@ -69,6 +70,6 @@ public class Kiosk {
             }
         }
 
-        return num;
+        return num - 1;
     }
 }
