@@ -7,9 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         // 데이터 가져오기
-        MenuData data = new MenuData();
-        
-        MenuList<Menu> menus = data.getMenus();
+        MenuList<Menu> menus = MenuData.getMenus();
 
         Kiosk<Menu> kiosk = new Kiosk(menus);
         kiosk.start();

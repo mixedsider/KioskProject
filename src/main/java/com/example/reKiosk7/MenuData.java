@@ -7,10 +7,8 @@ import com.example.reKiosk7.MenuType.MenuType;
 
 public class MenuData {
 
-    private final MenuList<Menu> menus;
-
-    public MenuData() {
-        menus = new MenuList<>();
+    public static MenuList<Menu> getMenus() {
+        MenuList<Menu> menus = new MenuList<>();
 
         menus.add(new Burger(MenuType.BURGER, "ShackBurger", 6.9, new String[]{"토마토", "양상추", "쉑소스가 토핑된 치즈버거"}));
         menus.add(new Burger(MenuType.BURGER, "SmokeShack", 8.9, new String[]{"베이컨", "체리 페퍼에 쉑소스가 토핑된 치즈버거"}));
@@ -26,9 +24,6 @@ public class MenuData {
         menus.add(new Desserts(MenuType.DESSERTS, "Nugget King", 8.9, new String[]{"너겟 킹"}));
         menus.add(new Desserts(MenuType.DESSERTS, "Cheese stick", 6.9, new String[]{"치즈 스틱"}));
         menus.add(new Desserts(MenuType.DESSERTS, "Coleslaw", 5.4, new String[]{"코울슬로"}));
-    }
-
-    public MenuList<Menu> getMenus() {
         return menus;
     }
 }
