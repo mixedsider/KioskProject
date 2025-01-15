@@ -77,23 +77,23 @@ public class Kiosk {
 
     // 장바구니 연산
     private void callShoppingMenu( int num ) {
-        if( num == menus.size() ) {
-            // 메뉴 출력
-            shoppingCart.showShopping();
-            System.out.println();
-            System.out.println("[ Total ]");
-            System.out.println(" W " + shoppingCart.getHowMuch());
+        if( num == menus.size() + 1) {
+            shoppingCart.clearShopping();
+            return;
+        }
 
-            System.out.println(" 1. 주문 \t\t 2. 메뉴판");
-            int input = inputNum(1, 2);
-            if( input == 0 ) {
+        // 메뉴 출력
+        shoppingCart.showShopping();
+        System.out.println();
+        System.out.println("[ Total ]");
+        System.out.println(" W " + shoppingCart.getHowMuch());
 
-                discount = inputPersonType();
-                String result = String.format("%.2f", discount.calculate(shoppingCart.getHowMuch()));
-                System.out.println("주문이 완료되었습니다. 금액은 W " + result + " 입니다.");
-                shoppingCart.clearShopping();
-            }
-        } else {
+        System.out.println(" 1. 주문 \t\t 2. 메뉴판");
+        int input = inputNum(1, 2);
+        if( input == 0 ) {
+            discount = inputPersonType();
+            String result = String.format("%.2f", discount.calculate(shoppingCart.getHowMuch()));
+            System.out.println("주문이 완료되었습니다. 금액은 W " + result + " 입니다.");
             shoppingCart.clearShopping();
         }
     }

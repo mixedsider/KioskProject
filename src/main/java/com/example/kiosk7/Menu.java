@@ -46,7 +46,7 @@ public class Menu {
 
     public void showMenuItems() {
         System.out.println("[ " + this.menuCategory + " MENU ]");
-        menuItems.stream().forEach(item -> {
+        menuItems.forEach(item -> {
             System.out.println(menuItems.indexOf(item) + 1 + ". " + item.toString());
         });
         System.out.println("0. 종료" + "\t\t\t | " + "종료");

@@ -66,13 +66,7 @@ public class MenuItem {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(" ").append(this.itemName);
-
-        // 길이 조절용
-        if( itemName.length() < 12 )
-            sb.append("\t");
-
-        sb.append(" | ");
+        sb.append(" ").append(this.itemName).append("\t").append(" | ");
         sb.append(" W ").append(this.itemPrice).append("\t").append(" | ");
         this.itemDescribeList.forEach(item -> {
             sb.append(item).append(", ");

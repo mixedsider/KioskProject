@@ -3,7 +3,7 @@ package com.example.kiosk7;
 import java.util.Arrays;
 import java.util.function.Function;
 
-public enum Discount {
+public enum Discount{
     NATIONAL(0,"국가유공자", 10, (a) -> a * 0.9 ),
     ARMY(1,"군인", 5, (a) -> a * 0.95 ),
     STUDENT(2,"학생", 3, (a)-> a * 0.97),
@@ -14,10 +14,10 @@ public enum Discount {
     private final int discountPercent;
     private final Function<Double, Double> discount;
 
-    Discount(int typeNum, String typeStr, int discountPersent, Function<Double, Double> discount) {
+    Discount(int typeNum, String typeStr, int discountPercent, Function<Double, Double> discount) {
         this.typeNum = typeNum;
         this.typeStr = typeStr;
-        this.discountPercent = discountPersent;
+        this.discountPercent = discountPercent;
         this.discount = discount;
     }
 
