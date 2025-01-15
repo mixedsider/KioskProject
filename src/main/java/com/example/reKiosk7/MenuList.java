@@ -1,6 +1,6 @@
-package com.example.kiosk7;
+package com.example.reKiosk7;
 
-import com.example.kiosk7.MenuType.MenuType;
+import com.example.reKiosk7.MenuType.MenuType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,25 +45,4 @@ public class MenuList<T extends Menu> {
                 .filter(item -> item.getType() == type)
                 .toList();
     }
-
-    // list
-//    @Override
-//    public void addItem(T item) {
-//        int inputNum = END_NUMBER;
-//        System.out.println("선택하신 메뉴 : " + item.toString());
-//        System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
-//        System.out.println("1. 확인\t\t2. 취소");
-//
-//        inputNum = inputNum(1, 2);
-//        if (inputNum == 0)
-//            this.menuItems.add(item);
-//    }
-//
-//    @Override
-//    public void showItems() {
-//        menuItems.forEach(item -> {
-//            System.out.println(menuItems.indexOf(item) + 1 + ". " + item.toString());
-//        });
-//        System.out.println("0. 종료" + "\t\t\t | " + "종료");
-//    }
 }

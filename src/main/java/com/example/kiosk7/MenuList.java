@@ -30,6 +30,11 @@ public class MenuList<T> implements IMenu<T> {
     }
 
     @Override
+    public void setItemList(List<T> items) {
+        this.menuItems = items;
+    }
+
+    @Override
     public T getItem(int i) {
         return this.menuItems.get(i);
     }
@@ -42,13 +47,8 @@ public class MenuList<T> implements IMenu<T> {
         System.out.println("1. 확인\t\t2. 취소");
 
         inputNum = inputNum(1, 2);
-        if( inputNum == 0 )
+        if (inputNum == 0)
             this.menuItems.add(item);
-    }
-
-    @Override
-    public void setItemList(List<T> items) {
-        this.menuItems = items;
     }
 
     @Override
@@ -76,6 +76,5 @@ public class MenuList<T> implements IMenu<T> {
         menuItems.forEach(item -> {
             System.out.println(menuItems.indexOf(item) + 1 + ". " + item.toString());
         });
-        System.out.println("0. 종료" + "\t\t\t | " + "종료");
     }
 }

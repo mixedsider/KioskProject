@@ -18,21 +18,19 @@ public class Kiosk<T> {
     public void start() {
         //상위 메뉴
         int categoryNum = END_NUMBER;
-        while(true) {
+        while (true) {
             // 상위 메뉴 출력
             showMenuCategories(shoppingCart.isExist());
 
             //상위 메뉴 선택
             categoryNum = inputNum(0,
-                    shoppingCart.isExist() ? menu.size()+2 : menu.size()
+                    shoppingCart.isExist() ? menu.size() + 2 : menu.size()
             );
             // 0 입력 시 종료
-            if (categoryNum == END_NUMBER ) {
+            if (categoryNum == END_NUMBER) {
                 System.out.println("프로그램을 종료합니다.");
                 return;
-            }
-
-            else if( categoryNum >= menu.size() ) callShoppingMenu(categoryNum);
+            } else if (categoryNum >= menu.size()) callShoppingMenu(categoryNum);
             else {
                 showMenuItems(categoryNum);
             }
@@ -45,7 +43,7 @@ public class Kiosk<T> {
         menu.showItems();
 
         // 장바구니 출력
-        if( isExist ) {
+        if (isExist) {
             System.out.println();
             System.out.println("[ ORDER MENU ]");
             System.out.println(menu.size() + 1 + ". Orders");
@@ -54,20 +52,21 @@ public class Kiosk<T> {
     }
 
     // 하위 메뉴
-    private void showMenuItems( int num ) {
+    private void showMenuItems(int num) {
         MenuList<MenuItem> menuList;
         int itemNum = END_NUMBER;
 
         // 카테고리 선택 ( 입력 숫자 -1 == 배열 맞추기 )
         menuList = (MenuList<MenuItem>) menu.getItemList().get(num);
         // 하위 메뉴 출력
-        System.out.println("[ " + menu.getCategory(num) + "MENU" + " ]");
+        System.out.println("[ " + menu.getCategory(num) + " MENU" + " ]");
         menuList.showItems();
+        System.out.println("0. 종료" + "\t\t\t | " + "종료");
         // 하위 메뉴 선택
         itemNum = inputNum(0, menuList.size());
 
         // 0 입력시 뒤로 가기
-        if( itemNum == END_NUMBER ) {
+        if (itemNum == END_NUMBER) {
             System.out.println("상위 메뉴로 돌아갑니다.");
             return;
         }
@@ -75,8 +74,8 @@ public class Kiosk<T> {
     }
 
     // 장바구니 연산
-    private void callShoppingMenu( int num ) {
-        if( num == menu.size() + 1) {
+    private void callShoppingMenu(int num) {
+        if (num == menu.size() + 1) {
             shoppingCart.clearItemList();
             return;
         }
@@ -91,10 +90,10 @@ public class Kiosk<T> {
         System.out.println(" 1. 주문 \t\t 2. 메뉴판");
 
         int input = inputNum(1, 2);
-        if ( input == 0 ) order( result );
+        if (input == 0) order(result);
     }
 
-    private void order( double payMoney ) {
+    private void order(double payMoney) {
         discount = inputPersonType();
         String result = String.format("%.2f", discount.calculate(payMoney));
         System.out.println("주문이 완료되었습니다. 금액은 W " + result + " 입니다.");

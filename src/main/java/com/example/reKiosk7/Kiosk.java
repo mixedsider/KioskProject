@@ -1,6 +1,6 @@
-package com.example.kiosk7;
+package com.example.reKiosk7;
 
-import com.example.kiosk7.MenuType.MenuType;
+import com.example.reKiosk7.MenuType.MenuType;
 
 import java.util.Arrays;
 import java.util.List;
@@ -40,10 +40,9 @@ public class Kiosk<T extends Menu> {
                 System.out.println("프로그램을 종료합니다.");
                 return;
             } else if (categoryNum >= MenuType.size()) // 장바구니 조회
-                callShoppingMenu(categoryNum);
+                showShopMenu(categoryNum);
             else
-
-                showItems(categoryNum);
+                showItems(categoryNum); // 하위 메뉴
         }
     }
 
@@ -63,11 +62,11 @@ public class Kiosk<T extends Menu> {
         if (!isExist) return;
         System.out.println();
         System.out.println("[ ORDER MENU ]");
-        System.out.println(menus.size() + 1 + ". Orders");
-        System.out.println(menus.size() + 2 + ". Cancel");
+        System.out.println(MenuType.size() + 1 + ". Orders");
+        System.out.println(MenuType.size() + 2 + ". Cancel");
     }
 
-    //     하위 메뉴
+    // 하위 메뉴
     private void showItems(int num) {
         int itemNum = END_NUMBER;
         MenuType mt = MenuType.getTypeNum(num);
@@ -82,6 +81,7 @@ public class Kiosk<T extends Menu> {
                     " | " + menuItems.get(i).toString());
         }
         System.out.println("0. 뒤로가기");
+        
         // 하위 메뉴 선택
         itemNum = iu.inputNum(0, menuItems.size());
 
@@ -97,7 +97,7 @@ public class Kiosk<T extends Menu> {
 
 
     // 장바구니 연산
-    private void callShoppingMenu(int num) {
+    private void showShopMenu(int num) {
         if (num == menus.size() + 1) {
             shop.clear();
             return;

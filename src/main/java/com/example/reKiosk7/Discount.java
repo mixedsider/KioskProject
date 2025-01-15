@@ -1,4 +1,4 @@
-package com.example.kiosk7;
+package com.example.reKiosk7;
 
 import java.util.Arrays;
 

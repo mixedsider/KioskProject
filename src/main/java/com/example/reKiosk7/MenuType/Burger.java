@@ -1,6 +1,6 @@
-package com.example.kiosk7.MenuType;
+package com.example.reKiosk7.MenuType;
 
-import com.example.kiosk7.Menu;
+import com.example.reKiosk7.Menu;
 
 public class Burger extends Menu {
 

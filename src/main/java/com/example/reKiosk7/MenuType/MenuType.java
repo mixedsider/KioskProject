@@ -1,4 +1,4 @@
-package com.example.kiosk7.MenuType;
+package com.example.reKiosk7.MenuType;
 
 import java.util.Arrays;
 import java.util.List;
