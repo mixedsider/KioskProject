@@ -48,4 +48,10 @@ public enum Discount{
                 .filter(item -> item.getTypeNum() == num)
                 .findAny().orElse(null);
     }
+
+    public static void showType() {
+        for( Discount a : Discount.values() ) {
+            System.out.println(a.getTypeNum()+1 + ". " + a.getTypeStr() + " : " + a.getDiscountPercent() + "%");
+        }
+    }
 }
