@@ -1,16 +1,16 @@
-package com.example.reKiosk7;
-
-import com.example.reKiosk7.MenuType.MenuType;
+package com.example.kiosk8.type;
 
 import java.util.List;
 
-public abstract class Menu {
+public abstract class MenuItem {
+
+    private final StringBuilder sb = new StringBuilder();
     private String itemName;
     private double itemPrice;
     private List<String> itemDescribeList;
 
     // 생성자
-    public Menu(String itemName, double itemPrice, String[] itemDescribeList) {
+    public MenuItem(String itemName, double itemPrice, String[] itemDescribeList) {
         this.itemName = itemName;
         this.itemPrice = itemPrice;
         this.itemDescribeList = List.of(itemDescribeList);
@@ -41,14 +41,19 @@ public abstract class Menu {
         this.itemDescribeList = List.of(itemDescribeList);
     }
 
-    public abstract int getTypeNum();
+    // 자식클래스 getter
+    public abstract int getNum();
 
-    public abstract String getTypeStr();
-
-    public abstract MenuType getType();
+    public abstract String getCategory();
 
     @Override
     public String toString() {
-        return itemName + " | W " + itemPrice + " | " + itemDescribeList.toString();
+        StringBuilder result = new StringBuilder();
+        result.append(itemName).append(" | W ").append(itemPrice).append(" | ");
+        for (int i = 0; i < itemDescribeList.size(); i++) {
+            result.append(itemDescribeList.get(i)).append(", ");
+        }
+        result.delete(result.length() - 1, result.length());
+        return result.toString();
     }
 }
