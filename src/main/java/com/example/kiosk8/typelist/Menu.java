@@ -21,6 +21,7 @@ public class Menu<T extends MenuItem> {
         return this.menuList.size();
     }
 
+    // 메뉴 카테고리 사이즈
     public int categorySize() {
         return (int) this.menuList.stream()
                 .map(MenuItem::getNum)

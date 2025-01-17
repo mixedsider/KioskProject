@@ -41,6 +41,7 @@ public abstract class MenuItem {
         this.itemDescribeList = List.of(itemDescribeList);
     }
 
+    // 자식클래스 getter
     public abstract int getNum();
 
     public abstract String getCategory();

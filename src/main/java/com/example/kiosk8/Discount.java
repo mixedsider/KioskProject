@@ -30,6 +30,7 @@ public enum Discount {
                 .findAny().orElse(null);
     }
 
+    // Discount 목록 보여주기
     public static void showValues() {
         for (Discount a : Discount.values()) {
             System.out.println(a.getNum() + 1 + ". " + a.getStr() + " : " + (int) a.getDiscountPercent() + "%");
@@ -48,6 +49,7 @@ public enum Discount {
         return this.discountPercent;
     }
 
+    // 할인 계산
     public double calculate(double price) {
         return price * (100 - this.discountPercent) / 100;
     }

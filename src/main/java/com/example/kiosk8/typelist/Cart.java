@@ -24,6 +24,7 @@ public class Cart<T extends MenuItem> {
         this.innerCart.clear();
     }
 
+    // 카트 안에 있는 물건 값
     public double getPayMoney() {
         return innerCart.stream()
                 .mapToDouble(MenuItem::getItemPrice)

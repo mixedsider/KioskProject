@@ -128,10 +128,12 @@ public class Kiosk<T extends MenuItem> {
         cart.clear();
     }
 
-    private int inputNum(int size) {
-        return inputNum(0, size);
+    // 숫자 입력 0 ~ last 까지
+    private int inputNum(int last) {
+        return inputNum(0, last);
     }
 
+    // 숫자 입력 first ~ last 까지
     private int inputNum(int first, int last) {
         int num = END;
         while (true) {
