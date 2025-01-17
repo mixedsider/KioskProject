@@ -1,4 +1,4 @@
-package com.example.kiosk1and2;
+package com.example.kiosk1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,20 +42,20 @@ public class MenuItem {
         return this.itemName;
     }
 
-    public double getItemPrice() {
-        return this.itemPrice;
-    }
-
-    public List<String> getItemDescribeList() {
-        return this.itemDescribeList;
-    }
-
     public void setItemName(String itemName) {
         this.itemName = itemName;
     }
 
+    public double getItemPrice() {
+        return this.itemPrice;
+    }
+
     public void setItemPrice(double itemPrice) {
         this.itemPrice = itemPrice;
+    }
+
+    public List<String> getItemDescribeList() {
+        return this.itemDescribeList;
     }
 
     public void setItemDescribeList(List<String> itemDescribeList) {
@@ -69,7 +69,7 @@ public class MenuItem {
         sb.append(" ").append(this.itemName);
 
         // 길이 조절용
-        if( itemName.length() < 12 )
+        if (itemName.length() < 12)
             sb.append("\t");
 
         sb.append(" | ");
@@ -77,7 +77,7 @@ public class MenuItem {
         this.itemDescribeList.forEach(item -> {
             sb.append(item).append(", ");
         });
-        sb.delete(sb.length()-2 , sb.length()-1); // 마지막 , 삭제용
+        sb.delete(sb.length() - 2, sb.length() - 1); // 마지막 , 삭제용
         return sb.toString();
     }
 }

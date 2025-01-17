@@ -1,4 +1,4 @@
-package com.example.kiosk1and2;
+package com.example.kiosk1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +17,14 @@ public class Main {
         menuList.add(new MenuItem("Hamburger", 5.4, new String[]{"비프패티를 기반으로 야채가 들어간 기본버거"}));
 
         // 메뉴 출력
-        for( int i = 0; i < menuList.size(); i++ ) {
+        for (int i = 0; i < menuList.size(); i++) {
             MenuItem item = menuList.get(i);
-            System.out.println(i+1 + ". " + item.toString());
+            System.out.println(i + 1 + ". " + item.toString());
         }
         System.out.println("0. 종료" + "\t\t\t | " + "종료");
 
         // 사용자 입력
-        while(true) {
+        while (true) {
             System.out.println("메뉴를 선택해주세요.");
             try {
                 selectNum = sc.nextInt();
@@ -46,7 +46,7 @@ public class Main {
                 }
             }
 
-            if( selectNum == 0 ) break;
+            if (selectNum == 0) break;
         }
     }
 }
